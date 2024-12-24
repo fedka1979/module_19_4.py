@@ -1,0 +1,14 @@
+{% extends 'fourth_task/menu.html' %}
+
+{% block pagename %}Главная страница{% endblock %}
+
+{% block header %}Главная страница{% endblock %}
+
+{% block content %}
+    <p>Добро пожаловать на главную страницу!</p>
+
+    <!-- Кнопка для перехода на страницу регистрации -->
+    <a href="{% url 'django_sign_up' %}">
+        <button>Зарегистрироваться</button>
+    </a>
+{% endblock %}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block pagename %}Default Title{% endblock %}</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        header, main {
+            border: 2px solid green;
+            margin: 10px;
+            padding: 10px;
+        }
+        .page-header {
+            border: 2px solid green;
+            margin: 10px 0;
+            padding: 10px;
+            font-size: 24px;
+            font-weight: bold;
+            text-align: left; /* Заголовок выравнивается по левому краю */
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        ul li {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="page-header">
+            {% block header %}{% endblock %}
+        </div>
+        <nav>
+            <ul>
+                {% block menu %}
+                <li><a href="{% url 'home' %}">Главная</a></li>
+                <li><a href="{% url 'shop' %}">Магазин</a></li>
+                <li><a href="{% url 'cart' %}">Корзина</a></li>
+                {% endblock %}
+            </ul>
+        </nav>
+    </header>
+    <main>
+        {% block content %}
+        <p>Контент страницы.</p>
+        {% endblock %}
+    </main>
+</body>
+</html>
